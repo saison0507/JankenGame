@@ -17,11 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DN-SO-9is">
-                                <rect key="frame" x="65" y="135" width="263" height="37"/>
+                                <rect key="frame" x="73" y="135" width="247" height="39.666666666666657"/>
                                 <attributedString key="attributedText">
                                     <fragment content="じゃんけんアプリ">
                                         <attributes>
-                                            <font key="NSFont" size="33" name=".HiraKakuInterface-W4"/>
+                                            <font key="NSFont" metaFont="system" size="33"/>
                                             <font key="NSOriginalFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>

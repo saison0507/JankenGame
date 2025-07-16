@@ -33,7 +33,7 @@ class JankenShowResultViewController: UIViewController {
         super.viewDidLayoutSubviews()
         vsLabel.layer.cornerRadius = vsLabel.frame.height / 2
     }
-
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -97,17 +97,34 @@ class JankenShowResultViewController: UIViewController {
     private func setNextButton() {
         switch gameManager?.playJankenGame() {
         case .DRAW:
-            nextButton.setTitle("D", for: .normal)
-        case .WIN:
-            nextButton.setTitle("W", for: .normal)
-        case .LOSE:
-            nextButton.setTitle("L", for: .normal)
+            nextButton.setTitle("もう一度", for: .normal)
+        case .WIN, .LOSE:
+            nextButton.setTitle("終了", for: .normal)
         case .none:
-            nextButton.setTitle("E", for: .normal)
+            nextButton.setTitle("エラー", for: .normal)
         }
         nextButton.isHidden = false
     }
-}
+    
+    @IBAction func didTapNextButton() {
+        switch gameManager?.playJankenGame() {
+        case .DRAW, .none:
+            resultLabel.text = "D"
+            let storyboard = UIStoryboard(name: "JankenChooseHandViewController", bundle: nil)
+            if let nextVC = storyboard.instantiateViewController(withIdentifier: "JankenChooseHandViewController") as? JankenChooseHandViewController {
+                nextVC.modalPresentationStyle = .fullScreen
+                self.present(nextVC, animated: true, completion: nil)
+            }
+            case .WIN, .LOSE:
+                resultLabel.text = "W"
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                if let nextVC = storyboard.instantiateViewController(withIdentifier: "JankenStartingGameViewController") as? JankenStartingGameViewController {
+                    nextVC.modalPresentationStyle = .fullScreen
+                    self.present(nextVC, animated: true, completion: nil)
+                }
+            }
+        }
+    }
 
 class DiagonalLineView: UIView {
     override func draw(_ rect: CGRect) {
