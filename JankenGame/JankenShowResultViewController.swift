@@ -124,17 +124,10 @@ class JankenShowResultViewController: UIViewController {
         switch gameManager?.playJankenGame() {
         case .DRAW, .none:
             dismiss(animated: true)
-//            let storyboard = UIStoryboard(name: "JankenChooseHandViewController", bundle: nil)
-//            if let nextVC = storyboard.instantiateViewController(withIdentifier: "JankenChooseHandViewController") as? JankenChooseHandViewController {
-//                nextVC.modalPresentationStyle = .fullScreen
-//                self.present(nextVC, animated: true, completion: nil)
-//            }
         case .WIN, .LOSE:
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let nextVC = storyboard.instantiateViewController(withIdentifier: "JankenStartingGameViewController") as? JankenStartingGameViewController {
-                nextVC.modalPresentationStyle = .fullScreen
-                self.present(nextVC, animated: true, completion: nil)
-                }
+            view.window?
+                .rootViewController?
+                .dismiss(animated: true)
             }
         }
     }

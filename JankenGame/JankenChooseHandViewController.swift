@@ -19,16 +19,15 @@ class JankenChooseHandViewController: UIViewController {
             let cpu = JankenCPUPlayer()
             presenter = JankenChooseHandPresenter(jankenUserPlayer: user, jankenCPUPlayer: cpu)
             }
-        setJankenChooseHandTitleLabel()
         setOKButton()
         setCancelButton()
         }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         selectedHand = nil
         setJankenChooseHandTitleLabel()
-        setOKButton()
-        setCancelButton()
+        resetButtonBorders()
     }
     
     private func setJankenChooseHandTitleLabel() {
@@ -65,8 +64,16 @@ class JankenChooseHandViewController: UIViewController {
         OKButton.configuration = OKButtonConfig
     }
     
+    private func resetButtonBorders() {
+        let buttons = [RockButton, ScissorsButton, PaperButton]
+        for button in buttons {
+            button?.layer.borderWidth = 0
+            button?.layer.borderColor = nil
+        }
+    }
+    
     private func updateButtonBorders(selectedButton: UIButton) {
-        // 全ボタンの枠線をリセット
+        resetButtonBorders()
         let buttons = [RockButton, ScissorsButton, PaperButton]
         for button in buttons {
             button?.layer.borderWidth = 0
