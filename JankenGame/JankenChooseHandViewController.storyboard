@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cly-xr-Eyw">
-                                <rect key="frame" x="139" y="741" width="115" height="42"/>
+                                <rect key="frame" x="139" y="731" width="115" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="やめる"/>
@@ -26,7 +26,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVv-fh-rh3">
-                                <rect key="frame" x="146" y="336" width="100" height="100"/>
+                                <rect key="frame" x="146.66666666666666" y="336" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cVv-fh-rh3" secondAttribute="height" multiplier="1:1" id="cAz-6q-oD6"/>
                                     <constraint firstAttribute="width" constant="100" id="oK0-uW-aSg"/>
@@ -39,23 +39,6 @@
                                     <action selector="didTapRockButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6og-SI-3fY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4M-mQ-ceg">
-                                <rect key="frame" x="156" y="621" width="90" height="66"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="OK">
-                                            <attributes>
-                                                <font key="NSFont" size="45" name="Helvetica"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="didTapOKButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GUB-gd-K9J"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ab4-av-yj7">
                                 <rect key="frame" x="26" y="502" width="100" height="100"/>
                                 <constraints>
@@ -65,6 +48,19 @@
                                 <state key="normal" title="" image="pahand"/>
                                 <connections>
                                     <action selector="didTapPaperButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hDm-zA-whe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5a-iB-EnF">
+                                <rect key="frame" x="277" y="502" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="c5z-AD-ArA"/>
+                                    <constraint firstAttribute="height" constant="100" id="euG-hH-hJh"/>
+                                    <constraint firstAttribute="width" secondItem="c5a-iB-EnF" secondAttribute="height" multiplier="1:1" id="oKC-Mf-KSd"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="chokihand"/>
+                                <connections>
+                                    <action selector="didTapScissorsButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Qc1-Mk-LIM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxb-NI-Uw0">
@@ -81,17 +77,21 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5a-iB-EnF">
-                                <rect key="frame" x="277" y="502" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="c5z-AD-ArA"/>
-                                    <constraint firstAttribute="height" constant="100" id="euG-hH-hJh"/>
-                                    <constraint firstAttribute="width" secondItem="c5a-iB-EnF" secondAttribute="height" multiplier="1:1" id="oKC-Mf-KSd"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Button" image="chokihand"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4M-mQ-ceg">
+                                <rect key="frame" x="151" y="621" width="90" height="66"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="OK">
+                                            <attributes>
+                                                <font key="NSFont" size="45" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
                                 <connections>
-                                    <action selector="didTapScissorsButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Qc1-Mk-LIM"/>
+                                    <action selector="didTapOKButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GUB-gd-K9J"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -107,7 +107,7 @@
                             <constraint firstItem="Sxb-NI-Uw0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="26" id="cev-hX-F1K"/>
                             <constraint firstItem="ab4-av-yj7" firstAttribute="leading" secondItem="Sxb-NI-Uw0" secondAttribute="leading" id="eMa-Oy-aL1"/>
                             <constraint firstItem="cVv-fh-rh3" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-40" id="fcu-OV-JOF"/>
-                            <constraint firstItem="Sxb-NI-Uw0" firstAttribute="centerX" secondItem="K4M-mQ-ceg" secondAttribute="centerX" constant="0.5" id="flA-aM-X1E"/>
+                            <constraint firstItem="Sxb-NI-Uw0" firstAttribute="centerX" secondItem="K4M-mQ-ceg" secondAttribute="centerX" constant="5.5" id="flA-aM-X1E"/>
                             <constraint firstItem="Sxb-NI-Uw0" firstAttribute="trailing" secondItem="c5a-iB-EnF" secondAttribute="trailing" id="oVJ-Go-Nwr"/>
                             <constraint firstItem="Sxb-NI-Uw0" firstAttribute="centerX" secondItem="cVv-fh-rh3" secondAttribute="centerX" constant="4.8333333333333428" id="pAp-7F-B50"/>
                             <constraint firstItem="Sxb-NI-Uw0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" constant="5" id="q3K-Fp-wT4"/>

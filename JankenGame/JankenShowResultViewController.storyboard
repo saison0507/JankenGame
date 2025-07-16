@@ -100,11 +100,11 @@
                     </view>
                     <connections>
                         <outlet property="myChooseHandImageView" destination="aJn-mF-NBA" id="fq0-bY-HH4"/>
-                        <outlet property="myNameLabel" destination="mPc-nT-gbp" id="c13-ip-tAy"/>
+                        <outlet property="myNameLabel" destination="lst-g6-fFZ" id="jW1-Lc-5fi"/>
                         <outlet property="nextButton" destination="HSB-t5-ypH" id="Jr8-De-2g5"/>
                         <outlet property="resultLabel" destination="Sz0-ai-bju" id="8to-EE-efj"/>
                         <outlet property="rivalChooseHandImageView" destination="neb-n3-iOB" id="Bd9-rQ-Wwx"/>
-                        <outlet property="rivalNameLabel" destination="lst-g6-fFZ" id="R2Q-jP-adI"/>
+                        <outlet property="rivalNameLabel" destination="mPc-nT-gbp" id="hZl-Tq-9Iw"/>
                         <outlet property="vsLabel" destination="Wfx-dI-5no" id="VJD-Gk-3an"/>
                     </connections>
                 </viewController>

@@ -11,8 +11,8 @@ class JankenShowResultViewController: UIViewController {
     
     @IBOutlet weak var myChooseHandImageView: UIImageView!
     @IBOutlet weak var rivalChooseHandImageView: UIImageView!
-    @IBOutlet weak var myNameLabel: UILabel!
     @IBOutlet weak var rivalNameLabel: UILabel!
+    @IBOutlet weak var myNameLabel: UILabel!
     @IBOutlet weak var vsLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
@@ -25,6 +25,10 @@ class JankenShowResultViewController: UIViewController {
         super.viewDidLoad()
         resultLabel.isHidden = true
         nextButton.isHidden = true
+        myChooseHandImageView.isHidden = true
+        rivalChooseHandImageView.isHidden = true
+        myNameLabel.isHidden = true
+        rivalNameLabel.isHidden = true
         setImage()
         setVsLabel()
     }
@@ -37,9 +41,19 @@ class JankenShowResultViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
-            self?.setResultLabel()
-            self?.setNextButton()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.myChooseHandImageView.isHidden = false
+            self?.myNameLabel.isHidden = false
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                self?.rivalChooseHandImageView.isHidden = false
+                self?.rivalNameLabel.isHidden = false
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                    self?.setResultLabel()
+                    self?.setNextButton()
+                }
+            }
         }
     }
     
