@@ -16,29 +16,98 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVv-fh-rh3">
-                                <rect key="frame" x="111" y="334" width="170" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVv-fh-rh3">
+                                <rect key="frame" x="146.66666666666666" y="376" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cVv-fh-rh3" secondAttribute="height" multiplier="1:1" id="cAz-6q-oD6"/>
+                                    <constraint firstAttribute="width" constant="100" id="oK0-uW-aSg"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="rjx-nQ-GpF"/>
+                                    <constraint firstAttribute="height" constant="100" id="uUC-RY-e1g"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button" image="guhand"/>
+                                <connections>
+                                    <action selector="didTapRockButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6og-SI-3fY"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ab4-av-yj7">
-                                <rect key="frame" x="16" y="512" width="170" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4M-mQ-ceg">
+                                <rect key="frame" x="151.66666666666666" y="678" width="90" height="66"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="OK">
+                                            <attributes>
+                                                <font key="NSFont" size="45" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapOKButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GUB-gd-K9J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ab4-av-yj7">
+                                <rect key="frame" x="43" y="537" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ab4-av-yj7" secondAttribute="height" multiplier="1:1" id="FJF-BW-6ah"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="" image="pahand"/>
+                                <connections>
+                                    <action selector="didTapPaperButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hDm-zA-whe"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5a-iB-EnF">
-                                <rect key="frame" x="207" y="512" width="170" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5a-iB-EnF">
+                                <rect key="frame" x="250" y="537" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="c5z-AD-ArA"/>
+                                    <constraint firstAttribute="height" constant="100" id="euG-hH-hJh"/>
+                                    <constraint firstAttribute="width" secondItem="c5a-iB-EnF" secondAttribute="height" multiplier="1:1" id="oKC-Mf-KSd"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button" image="chokihand"/>
+                                <connections>
+                                    <action selector="didTapScissorsButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Qc1-Mk-LIM"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxb-NI-Uw0">
+                                <rect key="frame" x="43" y="59" width="307" height="34.666666666666657"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="出す手を選んでください">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="29"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="c5a-iB-EnF" firstAttribute="bottom" secondItem="ab4-av-yj7" secondAttribute="bottom" id="2Tk-Ub-9Y2"/>
+                            <constraint firstItem="Sxb-NI-Uw0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="6Md-N1-vSO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="K4M-mQ-ceg" secondAttribute="bottom" constant="74" id="BGX-Ca-oL0"/>
+                            <constraint firstItem="c5a-iB-EnF" firstAttribute="top" secondItem="ab4-av-yj7" secondAttribute="top" id="E7q-Ij-83E"/>
+                            <constraint firstItem="Sxb-NI-Uw0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="EoS-mk-yn0"/>
+                            <constraint firstItem="Sxb-NI-Uw0" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Ulw-zh-Tmb"/>
+                            <constraint firstItem="Sxb-NI-Uw0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="43" id="cev-hX-F1K"/>
+                            <constraint firstItem="ab4-av-yj7" firstAttribute="leading" secondItem="Sxb-NI-Uw0" secondAttribute="leading" id="eMa-Oy-aL1"/>
+                            <constraint firstItem="cVv-fh-rh3" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="fcu-OV-JOF"/>
+                            <constraint firstItem="Sxb-NI-Uw0" firstAttribute="centerX" secondItem="K4M-mQ-ceg" secondAttribute="centerX" id="flA-aM-X1E"/>
+                            <constraint firstItem="Sxb-NI-Uw0" firstAttribute="trailing" secondItem="c5a-iB-EnF" secondAttribute="trailing" id="oVJ-Go-Nwr"/>
+                            <constraint firstItem="Sxb-NI-Uw0" firstAttribute="centerX" secondItem="cVv-fh-rh3" secondAttribute="centerX" id="pAp-7F-B50"/>
+                            <constraint firstItem="Sxb-NI-Uw0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="q3K-Fp-wT4"/>
+                            <constraint firstItem="Sxb-NI-Uw0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="vEY-UM-I1u"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="c5a-iB-EnF" secondAttribute="bottom" constant="181" id="wm2-6p-dHR"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="JankenChooseHandTitleLabel" destination="Sxb-NI-Uw0" id="tcX-Ck-gOM"/>
+                        <outlet property="OKButton" destination="K4M-mQ-ceg" id="Y5r-c6-rPG"/>
                         <outlet property="PaperButton" destination="ab4-av-yj7" id="yar-Mc-mAB"/>
                         <outlet property="RockButton" destination="cVv-fh-rh3" id="QsV-bp-gEm"/>
                         <outlet property="ScissorsButton" destination="c5a-iB-EnF" id="NnF-Sd-55Y"/>
