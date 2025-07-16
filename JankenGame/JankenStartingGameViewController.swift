@@ -15,7 +15,18 @@ class JankenStartingGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setStartButton()
         
+    }
+    
+    private func setStartButton() {
+        var jankenStartingGameButtonConfig = jankenStartingGameButton.configuration ?? UIButton.Configuration.plain()
+        jankenStartingGameButtonConfig.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer{
+            incoming in var attributes = incoming;
+            attributes.font = UIFont.systemFont(ofSize: 50); return attributes}
+        jankenStartingGameButtonConfig.background.strokeColor = .gray
+        jankenStartingGameButtonConfig.background.strokeWidth = 2
+        jankenStartingGameButton.configuration = jankenStartingGameButtonConfig
     }
     
     @IBAction func didTapStartButton(_ sender: UIButton) {

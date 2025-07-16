@@ -83,14 +83,20 @@ class JankenShowResultViewController: UIViewController {
     private func setResultLabel() {
         switch gameManager?.playJankenGame() {
         case .DRAW:
-            resultLabel.text = "D"
+            resultLabel.text = "DRAW"
+            resultLabel.backgroundColor = .green
         case .WIN:
-            resultLabel.text = "W"
+            resultLabel.text = "YOU WIN!"
+            resultLabel.backgroundColor = .cyan
         case .LOSE:
-            resultLabel.text = "L"
+            resultLabel.text = "YOU LOSE..."
+            resultLabel.backgroundColor = .systemPink
         case .none:
-            resultLabel.text = "E"
+            resultLabel.text = "ERROR"
+            resultLabel.backgroundColor = .red
         }
+        resultLabel.layer.borderColor = UIColor.black.cgColor
+        resultLabel.layer.borderWidth = 2.0
         resultLabel.isHidden = false
     }
     
@@ -99,33 +105,34 @@ class JankenShowResultViewController: UIViewController {
         switch gameManager?.playJankenGame() {
         case .DRAW:
             nextButtonConfig.title = "もう一度"
-            nextButtonConfig.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer{ incoming in var attributes = incoming; attributes.font = UIFont.systemFont(ofSize: 100); return attributes}
+            nextButtonConfig.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer{ incoming in var attributes = incoming; attributes.font = UIFont.systemFont(ofSize: 30); return attributes}
         case .WIN, .LOSE:
             nextButtonConfig.title = "終了"
-            nextButtonConfig.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer{ incoming in var attributes = incoming; attributes.font = UIFont.systemFont(ofSize: 100); return attributes}
+            nextButtonConfig.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer{ incoming in var attributes = incoming; attributes.font = UIFont.systemFont(ofSize: 50); return attributes}
         case .none:
             nextButtonConfig.title = "もう一度"
-            nextButtonConfig.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer{ incoming in var attributes = incoming; attributes.font = UIFont.systemFont(ofSize: 100); return attributes}
+            nextButtonConfig.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer{ incoming in var attributes = incoming; attributes.font = UIFont.systemFont(ofSize: 30); return attributes}
         }
-        nextButtonConfig.baseBackgroundColor = .white
+        nextButtonConfig.background.backgroundColor = .white
+        nextButtonConfig.background.strokeColor = .gray
+        nextButtonConfig.background.strokeWidth = 2
+        nextButton.configuration = nextButtonConfig
         nextButton.isHidden = false
     }
     
     @IBAction func didTapNextButton() {
         switch gameManager?.playJankenGame() {
         case .DRAW, .none:
-            resultLabel.text = "D"
             let storyboard = UIStoryboard(name: "JankenChooseHandViewController", bundle: nil)
             if let nextVC = storyboard.instantiateViewController(withIdentifier: "JankenChooseHandViewController") as? JankenChooseHandViewController {
                 nextVC.modalPresentationStyle = .fullScreen
                 self.present(nextVC, animated: true, completion: nil)
             }
-            case .WIN, .LOSE:
-                resultLabel.text = "W"
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                if let nextVC = storyboard.instantiateViewController(withIdentifier: "JankenStartingGameViewController") as? JankenStartingGameViewController {
-                    nextVC.modalPresentationStyle = .fullScreen
-                    self.present(nextVC, animated: true, completion: nil)
+        case .WIN, .LOSE:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let nextVC = storyboard.instantiateViewController(withIdentifier: "JankenStartingGameViewController") as? JankenStartingGameViewController {
+                nextVC.modalPresentationStyle = .fullScreen
+                self.present(nextVC, animated: true, completion: nil)
                 }
             }
         }
