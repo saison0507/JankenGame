@@ -95,14 +95,19 @@ class JankenShowResultViewController: UIViewController {
     }
     
     private func setNextButton() {
+        var nextButtonConfig = nextButton.configuration ?? UIButton.Configuration.plain()
         switch gameManager?.playJankenGame() {
         case .DRAW:
-            nextButton.setTitle("もう一度", for: .normal)
+            nextButtonConfig.title = "もう一度"
+            nextButtonConfig.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer{ incoming in var attributes = incoming; attributes.font = UIFont.systemFont(ofSize: 100); return attributes}
         case .WIN, .LOSE:
-            nextButton.setTitle("終了", for: .normal)
+            nextButtonConfig.title = "終了"
+            nextButtonConfig.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer{ incoming in var attributes = incoming; attributes.font = UIFont.systemFont(ofSize: 100); return attributes}
         case .none:
-            nextButton.setTitle("エラー", for: .normal)
+            nextButtonConfig.title = "もう一度"
+            nextButtonConfig.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer{ incoming in var attributes = incoming; attributes.font = UIFont.systemFont(ofSize: 100); return attributes}
         }
+        nextButtonConfig.baseBackgroundColor = .white
         nextButton.isHidden = false
     }
     

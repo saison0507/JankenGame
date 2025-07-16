@@ -16,8 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" restorationIdentifier="DiagonalLineView" translatesAutoresizingMaskIntoConstraints="NO" id="4sh-5a-sqQ" customClass="DiagonalLineView" customModule="JankenGame" customModuleProvider="target">
+                            <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="DiagonalLineView" translatesAutoresizingMaskIntoConstraints="NO" id="4sh-5a-sqQ" customClass="DiagonalLineView" customModule="JankenGame" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="-13" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfx-dI-5no">
                                         <rect key="frame" x="137" y="380" width="119" height="93"/>
@@ -41,15 +42,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSB-t5-ypH">
-                                        <rect key="frame" x="224" y="689" width="148" height="70"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="Xih-VT-8az"/>
-                                            <constraint firstAttribute="width" constant="148" id="zhK-qv-2I7"/>
-                                        </constraints>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSB-t5-ypH">
+                                        <rect key="frame" x="237" y="683" width="148" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="終了">
-                                            <fontDescription key="titleFontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="41"/>
+                                            <backgroundConfiguration key="background" cornerRadius="17"/>
+                                            <fontDescription key="titleFontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="38"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="didTapNextButton" destination="Y6W-OH-hqX" eventType="touchUpInside" id="BNN-ut-bsD"/>
@@ -57,10 +57,6 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="HSB-t5-ypH" secondAttribute="bottom" constant="94" id="BrE-qs-LLO"/>
-                                    <constraint firstItem="HSB-t5-ypH" firstAttribute="trailing" secondItem="4sh-5a-sqQ" secondAttribute="trailingMargin" id="jrL-Gl-fNk"/>
-                                </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aJn-mF-NBA">
                                 <rect key="frame" x="16" y="567" width="170" height="170"/>
@@ -101,12 +97,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="4sh-5a-sqQ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="dd7-mK-2av"/>
-                            <constraint firstItem="4sh-5a-sqQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="rYY-3g-pMa"/>
-                            <constraint firstItem="4sh-5a-sqQ" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="topMargin" constant="-72" id="uIa-Ye-QKf"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="4sh-5a-sqQ" secondAttribute="bottom" constant="-21" id="wVN-5W-4Ao"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="myChooseHandImageView" destination="aJn-mF-NBA" id="fq0-bY-HH4"/>
