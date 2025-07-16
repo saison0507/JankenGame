@@ -123,11 +123,12 @@ class JankenShowResultViewController: UIViewController {
     @IBAction func didTapNextButton() {
         switch gameManager?.playJankenGame() {
         case .DRAW, .none:
-            let storyboard = UIStoryboard(name: "JankenChooseHandViewController", bundle: nil)
-            if let nextVC = storyboard.instantiateViewController(withIdentifier: "JankenChooseHandViewController") as? JankenChooseHandViewController {
-                nextVC.modalPresentationStyle = .fullScreen
-                self.present(nextVC, animated: true, completion: nil)
-            }
+            dismiss(animated: true)
+//            let storyboard = UIStoryboard(name: "JankenChooseHandViewController", bundle: nil)
+//            if let nextVC = storyboard.instantiateViewController(withIdentifier: "JankenChooseHandViewController") as? JankenChooseHandViewController {
+//                nextVC.modalPresentationStyle = .fullScreen
+//                self.present(nextVC, animated: true, completion: nil)
+//            }
         case .WIN, .LOSE:
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let nextVC = storyboard.instantiateViewController(withIdentifier: "JankenStartingGameViewController") as? JankenStartingGameViewController {

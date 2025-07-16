@@ -23,6 +23,13 @@ class JankenChooseHandViewController: UIViewController {
         setOKButton()
         setCancelButton()
         }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        selectedHand = nil
+        setJankenChooseHandTitleLabel()
+        setOKButton()
+        setCancelButton()
+    }
     
     private func setJankenChooseHandTitleLabel() {
         let attributedString = NSAttributedString(
